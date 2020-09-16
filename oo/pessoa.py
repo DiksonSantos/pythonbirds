@@ -23,6 +23,23 @@ if __name__=='__main__':
     for x in Dikson.filhos:
         print(Dikson.nome)
 
+    #Criando Um Atributo PARA UM OBJETO, depois do __init__ ou no meio do Código:
+    Dikson.sobrenome = 'Santos'
+    print(Dikson.sobrenome)
+
+    #O Objeto 'Gow' Não Possui o Atributo Sobrenome
+    #Gow.sobrenome # Da Pau
+
+    #Para Listar todos os Atrib de Cada Objeto:
+    print(Dikson.__dict__)
+    print(Gow.__dict__)
+
+    #Removendo Atributo No meio Do codigo (Dinamicamente):
+    del Dikson.sobrenome
+    print("Sem Sobrenome Agora: ", Dikson.__dict__)
+
+
+
 #
 
 
