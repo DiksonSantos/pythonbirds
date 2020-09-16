@@ -1,4 +1,5 @@
 class Pessoa:
+    olhos: int = 5
     def __init__(self, *filhos, nome=None, age=34):
             self.nome = nome
             self.Idade = age
@@ -38,38 +39,26 @@ if __name__=='__main__':
     del Dikson.sobrenome
     print("Sem Sobrenome Agora: ", Dikson.__dict__)
 
+    print(Pessoa.olhos)
+    print(Gow.olhos)
+    print(id(Gow.olhos), "\n", id(Dikson.olhos),"\n" ,id(Pessoa.olhos))
 
-
+    #Aqui ele não mostra 'Olhos' Como atributo. Pois ele esta antes do __init__
+    print(Gow.__dict__)
 #
+    Gow.olhos = 3
+    print(Gow.__dict__)
 
+    #Agora o ID do objeto já é outro.
+    print(id(Gow.olhos))
 
-"""
-class Pessoa:
-    def __init__(self):
-            self.nome = None
+    #Para apagar A Alteração no caso 3 Olhos do Objeto e Não da Classe, usa-se DEL:
+    del Gow.olhos
+    #Agoras Ambos tem 3 olhos ->Gow esta herdando da Classe:
+    print(Gow.olhos)
+    print(Pessoa.olhos)
 
-    def greets(this):
-        return f"Oi {id(this)}"
-
-if __name__=='__main__':
-    p = Pessoa()
-    print(Pessoa.greets(p))
-    #Metodo Usual:
-    print(p.greets())
-    print(id(p))
-    #Adicionamos Meu nome ao Atributo 'nome'
-    p.nome = 'Dikson'
-    print(p.nome)
-"""
-
-
-
-
-    #Obs:
-    #print(p.greets(7))
-    #Seria o mesmo que:
-    #print(Pessoa.greets(p,7))
-    #Isto a Cima seria o mesmo que estar passando 2 argumentos
-    #..a FUN só suporta 1.
-
-#Alteration
+    #Agora Vamos mudar a Classe toda Para ter 3 Olhos:
+    Pessoa.olhos = 3
+    print("\n", id(Gow), "\n", id(Dikson), "\n", id(Pessoa))
+    print(Pessoa.olhos)
