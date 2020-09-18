@@ -8,6 +8,16 @@ class Pessoa:
     def greets(this):
         return f"Oi {id(this)}"
 
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        '''Permite Acessar os Metodos da CLasse Pessoa'''
+        return f'{cls} - olhos {cls.olhos}'
+
+    @staticmethod
+    def metodo_estatico(self):
+        return 10+10
+
+
 if __name__=='__main__':
     Gow = Pessoa(nome='Gow') #Aqui a Fun Só recebeu Nome
     #Jogou como argumento um Objeto que contém uma Função.
@@ -62,3 +72,14 @@ if __name__=='__main__':
     Pessoa.olhos = 3
     print("\n", id(Gow), "\n", id(Dikson), "\n", id(Pessoa))
     print(Pessoa.olhos)
+
+#@Classmethod
+X = Pessoa.nome_e_atributos_de_classe()
+print(X, "DECORATOR")
+
+#StaticMethod
+J = Pessoa.metodo_estatico(10)
+print(J)
+
+print(Dikson.nome_e_atributos_de_classe())
+
