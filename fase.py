@@ -43,7 +43,10 @@ class Fase():
 
         :param obstaculos:
         """
-        pass
+        #Metodo com _ pode ser acessado só de dentro da Classe
+        #Metodo Extend é parecido com o Append. Porem, Extend Adiciona Listas
+        #.. o Append Adiciona Elementos Numa Lista. Extend Add Listas em Listas.
+        self._obstaculos.extend(obstaculos)
 
     def adicionar_porco(self, *porcos):
         """
@@ -51,7 +54,7 @@ class Fase():
 
         :param porcos:
         """
-        pass
+        self._porcos.extend(porcos)
 
     def adicionar_passaro(self, *passaros):
         """
@@ -59,7 +62,7 @@ class Fase():
 
         :param passaros:
         """
-        pass
+        self._passaros.extend(passaros)
 
     def status(self):
         """
