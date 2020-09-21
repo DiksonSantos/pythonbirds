@@ -18,8 +18,16 @@ class Pessoa:
         return 10+10
 
 
+class Homem(Pessoa):
+    pass
+
+
+
+
 if __name__=='__main__':
-    Gow = Pessoa(nome='Gow') #Aqui a Fun Só recebeu Nome
+    #Classe Homem Herdou de Pessoa, assim substitui 'Pessoa' por 'Homem' e Funciona tbm:
+    Gow = Homem(nome='Gow') #Aqui a Fun Só recebeu Nome
+    #Gow = Pessoa(nome='Gow') #Aqui a Fun Só recebeu Nome
     #Jogou como argumento um Objeto que contém uma Função.
     Dikson = Pessoa(Gow, nome='Dikson')#Aqui a Fun q só rec Nome é Adicionada no Arg Nome.
     #p = Pessoa('Gow') #Agora Posso Inserir nome aqui
@@ -82,4 +90,10 @@ J = Pessoa.metodo_estatico(10)
 print(J)
 
 print(Dikson.nome_e_atributos_de_classe())
+print(Dikson.nome)
 
+print(isinstance(Dikson, Pessoa)) #Dikson pertence á classe Pessoa ? True
+print(isinstance(Homem, Pessoa)) #False Homem Não Pertence á Pessoa
+print(isinstance(Pessoa, Homem)) #False
+print(isinstance(Dikson, Homem)) #Não Pertence Ou Não esta associado á ...
+print(isinstance(Gow, Homem)) #Sim True 
