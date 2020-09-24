@@ -128,9 +128,10 @@ class Fase():
             if passaro.status == ATIVO:
                 return True
         return False
+
     """
     CTR + r  -> Selecione a parte do codigo que quer mudar
     Digite o nome do que vc quer alterar, e na linha de baixo
     para o que voce quer alterar.
     """
-
+#Dane-se! Este código do inferno não funciona de jeito nenhum
