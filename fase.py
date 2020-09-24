@@ -76,7 +76,15 @@ class Fase():
 
         :return:
         """
-        return EM_ANDAMENTO
+        #return EM_ANDAMENTO
+        #return VITORIA
+        #Metodo com ._ (protegido) só pode ser usado Apenas a propria classe pode Usa-lo:
+        if not self._possui_porco_ativo():
+            return VITORIA
+        elif self.possui_passaros_ativos():
+            return EM_ANDAMENTO
+        else: #Caso não haja mais Passaros Ativos.
+            return DERROTA
 
     def lancar(self, angulo, tempo):
         """
@@ -107,4 +115,22 @@ class Fase():
 
     def _transformar_em_ponto(self, ator):
         return Ponto(ator.x, ator.y, ator.caracter())
+
+    def _possui_porco_ativo(self):
+        for porco in self._porcos:
+            if porco.status == ATIVO:
+                return True
+        #Caso tudo a cima não resulte em Nada Significa que não existe porco Ativo:
+        return False
+
+    def possui_passaros_ativos(self):
+        for passaro in self._passaros:
+            if passaro.status == ATIVO:
+                return True
+        return False
+    """
+    CTR + r  -> Selecione a parte do codigo que quer mudar
+    Digite o nome do que vc quer alterar, e na linha de baixo
+    para o que voce quer alterar.
+    """
 

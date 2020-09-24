@@ -105,17 +105,16 @@ class FaseTestes(TestCase):
         self.assertEqual(VITORIA, fase.status())
 
     def teste_acabou_com_porcos_e_passaros(self):
-        fase = Fase()
-        porcos = [PorcoFake(1, 1) for _ in range(2)]  # criando 2 porcos
-        passaros = [PassaroFake(1, 1) for _ in range(2)]  # criando 2 pássaros
-        fase.adicionar_porco(*porcos)
+        fase = Fase()               # _ significa que é uma variavel Não Usada:
+        porcos = [PorcoFake(1, 1) for _ in range(2)]  # criando 2 porcos-> 0 & 1 (range)
+        passaros = [PassaroFake(1, 1) for _ in range(2)]  # criando 2 pássaros -> 0 & 1 (range)        fase.adicionar_porco(*porcos)
         fase.adicionar_passaro(*passaros)
 
         self.assertEqual(EM_ANDAMENTO, fase.status())
 
-        for ator in porcos + passaros:
+        for ator in porcos + passaros:  #UM FOR QUE PERCORRE DUAS LISTAS AO MESMO TEMPO.
             ator.status = DESTRUIDO
-        self.assertEqual(VITORIA, fase.status())
+        self.assertEqual(VITORIA, fase.status()) #Status deve ser == VITORIA.
 
         fase.adicionar_obstaculo(Obstaculo())
         self.assertEqual(VITORIA, fase.status(),
