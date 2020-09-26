@@ -136,4 +136,4 @@ class Fase():
     Digite o nome do que vc quer alterar, e na linha de baixo
     para o que voce quer alterar.
     """
-#Dane-se! Este código do inferno não funciona de jeito nenhum
+#Algoritmo corrigido por um colega do grupo

@@ -108,6 +108,7 @@ class FaseTestes(TestCase):
         fase = Fase()               # _ significa que é uma variavel Não Usada:
         porcos = [PorcoFake(1, 1) for _ in range(2)]  # criando 2 porcos-> 0 & 1 (range)
         passaros = [PassaroFake(1, 1) for _ in range(2)]  # criando 2 pássaros -> 0 & 1 (range)        fase.adicionar_porco(*porcos)
+        fase.adicionar_porco(*porcos)
         fase.adicionar_passaro(*passaros)
 
         self.assertEqual(EM_ANDAMENTO, fase.status())
